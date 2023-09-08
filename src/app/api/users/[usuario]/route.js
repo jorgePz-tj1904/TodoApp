@@ -21,7 +21,7 @@ export const DELETE= async(request, {params})=>{
     try {
         const task = await prisma.user.delete({
             where:{
-                id: Number(params.id)
+                name: params.usuario
             }
         });
         return NextResponse.json('se elimino correctamente'+ task);
